@@ -14,4 +14,4 @@ export const TaskStatusEnum = {
 
 export const AvailableTaskStatus = Object.values(TaskStatusEnum)
 
-//The values of the following enums are used in the database, so they should not be changed,they help to have good suggestions while writing the code
+//The values of the above enums are used in the database, so they should not be changed,they help to have good suggestions while writing the code
