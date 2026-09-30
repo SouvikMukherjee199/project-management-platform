@@ -24,13 +24,20 @@ import {
 import { AvailableUserRole, UserRolesEnum } from "../utils/constants.js";
 
 const router = Router();
-router.use(verifyJWT);
+router.use(verifyJWT); //middleware for using verifyJWT for all the following routes
 
 router
   .route("/")
   .get(getProjects)
   .post(createProjectValidator(), validate, createProject);
-
+// console.log({
+//   validateProjectPermission: typeof validateProjectPermission,
+//   getProjectById: typeof getProjectById,
+//   createProjectValidator: typeof createProjectValidator,
+//   validate: typeof validate,
+//   updateProject: typeof updateProject,
+//   deleteProject: typeof deleteProject,
+// });
 router
   .route("/:projectId")
   .get(validateProjectPermission(AvailableUserRole), getProjectById)
